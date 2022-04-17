@@ -1,6 +1,13 @@
 spring:
-   data:
-      cassandra:
-         keyspace-name: maersk
-         contact-points: 127.0.0.1
-         port: 9042
+   datasource:
+      url: jdbc:oracle:thin:@localhost:1521:xe
+      username: system
+      password: root@123
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+   jpa:
+      properties:
+         hibernate:
+            dialect : org.hibernate.dialect.Oracle10gDialect
+      hibernate :
+         naming :
+            physical-strategy : org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
